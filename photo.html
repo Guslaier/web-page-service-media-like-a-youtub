@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusArt-Photo</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./sup-pack/sub-icon/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="./css/photo.css">
+    <script src="./script/datascript.js"></script>
+</head>
+
+<body>
+    <nav>
+        <input style="display: none;" type="checkbox" id="ck-menu" name="sub-menu">
+        <a class="nav-icon" href="./index.html">
+            <div style="margin: auto;">
+                <h1>Mus<span>Art</span></h1>
+            </div>
+        </a>
+        <ul class="nav-main">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+        <label class="icon-menu" for="ck-menu">
+            <i class="fi-rr-menu-burger"></i>
+        </label>
+        <ul class="nav-sub">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+
+    </nav>
+    <div class="title">
+        <h1>PHOTO CUTE</h1>
+    </div>
+    <article class="main-contant">
+        <script>
+            let at = false;
+            var ck = [];
+            var nuus = [];
+            var id, ip;
+            var nuu = 0;
+            var nub = Object.keys(dataweb['users']).length;
+
+
+            for (let p in dataweb['users']) {
+                for (let i = 0; i < Object.keys(dataweb['users'][p]['PHOTO']).length; i++) {
+                    ck.push([parseInt(p), i])
+                    nuus.push(nuu)
+                    nuu++
+                }
+            }
+            let nn = nuus.length
+            let cs
+            if (nuu > 15) {
+                nuu = 15;
+            }
+            for (let i = 0; i < nuu; i++) {
+                cc = Math.floor(Math.random() * (nn - 1))
+                cs = nuus[cc];
+                nn = nuus.length
+                nuus.splice(cc, 1)
+                id = ck[cs][0]
+                ip = ck[cs][1]
+                document.write('<div class="item-'+i+'">' +
+                    '<a href="./picture.html?id=' + (1000000 + id) + '&p=' + ip +'" class="crad">' +
+                    '<img src="'+dataweb['users'][id]['PHOTO'][ip]+'" alt="">' +
+                    '</a>' +
+                    '</div>')
+            }
+
+        </script>
+
+
+    </article>
+
+</body>
+
+</html>

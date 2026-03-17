@@ -1,0 +1,31 @@
+.main-contant{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+}
+
+.crad{
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    background-color: var(--bg-crad);
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px rgb(0,0,0,0.2);
+}
+.crad .pf-icon{
+    display: flex;
+    margin-right: 10px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.crad .pf-icon img{
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}

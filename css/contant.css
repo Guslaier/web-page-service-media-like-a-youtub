@@ -1,0 +1,104 @@
+.main-contant {
+    width: 80%;
+    position: relative;
+    margin: 30px auto;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    transition: 0.5s;
+    gap: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.crad {
+    background-color: var(--bg-crad);
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px rgb(0,0,0,0.4);
+    position: relative;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.crad .tmue{
+    display: flex;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px rgb(0,0,0,0.5);
+    background-color: rgba(0,0,0);
+    overflow: hidden;
+    transition: 0.5s;
+}
+.crad .tmue view {
+    width: 100%;
+}
+
+.crad .data-video{
+    display: flex;
+    padding: 10px;
+}
+.crad .data-video .pf-icon img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.crad .data-video .pf-icon{
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 10px rgb(0,0,0,0.2);
+    overflow: hidden;
+    float: left;
+    margin: 0 0.8em 0 0em;
+    background-color: rgb(46, 46, 46);
+}
+.crad .data-video h1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    /* start showing ellipsis when 3rd line is reached */
+    margin: 0;
+    font-size: var(--font-side);
+    color: var(--font-color);
+    margin-bottom: 10px;
+}
+.crad .data-video p{
+    margin: 0;
+    padding: 0;
+    font-size: calc(var(--font-side) - 2px);
+    color:var(--font-color);
+    opacity: 0.5;
+}
+.crad .data-video span {
+    margin: 0;padding: 0;
+    font-size: calc(var(--font-side) - 4px);
+    color: var(--font-color);
+    opacity: 0.5;
+}
+
+
+.crad .tmue:hover {
+    border-radius: 0;
+    scale: 1.05;
+}
+
+
+@media only screen and (min-width:700px) {
+    .main-contant {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width:1100px) {
+    .main-contant {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

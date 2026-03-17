@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusArt-Photo</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./sup-pack/sub-icon/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="./css/picture.css">
+    <script src="./script/datascript.js"></script>
+</head>
+
+<body>
+    <nav>
+        <input style="display: none;" type="checkbox" id="ck-menu" name="sub-menu">
+        <a class="nav-icon" href="./index.html">
+            <div style="margin: auto;">
+                <h1>Mus<span>Art</span></h1>
+            </div>
+        </a>
+        <ul class="nav-main">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+        <label class="icon-menu" for="ck-menu">
+            <i class="fi-rr-menu-burger"></i>
+        </label>
+        <ul class="nav-sub">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+
+    </nav>
+    <div class="title">
+        <h1>PICTURE CUTE</h1>
+    </div>
+    <article class="main-contant">
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            let id = urlParams.get('id')
+            const p = urlParams.get('p')
+            id = id-1000000
+        </script>
+        <div style="display: flex; width: 100%;">
+            <div class="thume">
+                <script>
+                    document.write('<img src="'+ dataweb['users'][id]['PHOTO'][p]+'" alt="">')
+                </script>
+            </div>
+        </div>
+        <div class="ch">
+            <div class="bg-ch">
+                <script>
+                    document.write(
+                        '<div class="pf-icon">' +
+                        '<img src="' + dataweb['users'][id]['PROFILE_IMG'] + '"' +
+                        'alt="">' +
+                        '</div>' +
+                        '<article">' +
+                                '<p>' + dataweb['users'][id]['NAME_CH'] + '</p>' +
+                        '</article>')
+                </script>
+            </div>
+        </div>
+
+    </article>
+
+</body>
+
+</html>

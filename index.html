@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusArt</title>
+    <link rel="stylesheet" href="sup-pack/sub-icon/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="css/contant.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/datascript.js"></script>
+</head>
+
+<body>
+    <nav>
+        <input style="display: none;" type="checkbox" id="ck-menu" name="sub-menu">
+        <a class="nav-icon" href="./index.html">
+            <div style="margin: auto;">
+                <h1>Mus<span>Art</span></h1>
+            </div>
+        </a>
+        <ul class="nav-main">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+        <label class="icon-menu" for="ck-menu">
+            <i class="fi-rr-menu-burger"></i>
+        </label>
+        <ul class="nav-sub">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+
+    </nav>
+    <div class="title"><h1 >MUSIC CUTE</h1></div>
+    <article class="main-contant">
+        
+        <script>
+            let at = false;
+            var ck = [];
+            var nuus = [];
+            var id, iv;
+            var nuu = 0;
+            var nub = Object.keys(dataweb['users']).length;
+
+
+            for (let p in dataweb['users']) {
+                for (let i = 0; i < Object.keys(dataweb['users'][p]['VIDEO']).length; i++) {
+                    ck.push([parseInt(p), i])
+                    nuus.push(nuu)
+                    nuu++
+                }
+            }
+            let nn = nuus.length
+            let cs
+            if (nuu > 15){
+                nuu = 15;
+            }
+            for (let i = 0; i < nuu; i++) {
+                cc = Math.floor(Math.random() * (nn - 1))
+                cs = nuus[cc];
+                nn = nuus.length
+                nuus.splice(cc, 1)
+                id = ck[cs][0]
+                iv = ck[cs][1]
+                document.write(
+                    '<div class="item-' + i + '">' +
+                    '<a href = "./watch.html?id=' + (1000000 + id) + '&v=' + iv + '" class= "crad">' +
+                    '<div class="tmue">' +
+                    '<video class="view" id="show' + i + '" width="100%" src="' + dataweb['users'][id]['VIDEO'][iv]['scr'] + '">' +
+                    '</div>' +
+                    '<article class="data-video">' +
+                    '<div class="pf-icon">' +
+                    '<img src="' + dataweb['users'][id]['PROFILE_IMG'] + '"' +
+                    'alt="">' +
+                    '</div>' +
+                    '<article style="float: left;">' +
+                    '<h1>' + dataweb['users'][id]['VIDEO'][iv]['title'] + '</h1>' +
+                    '<p>' + dataweb['users'][id]['NAME_CH'] + '</p>' +
+                    '<span class="view">การดู ' + numberWithCommas(dataweb['users'][id]['VIDEO'][iv]['view']) + ' ครั้ง</span>' +
+                    '</article></article></a></div > ');
+                document.getElementById('show' + i).currentTime = 1.5;
+
+            }
+        </script>
+
+    </article>
+    <footer>
+    </footer>
+</body>
+
+</html>

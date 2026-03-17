@@ -1,0 +1,46 @@
+
+.main-contant{
+    width: 90%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    user-select: none;
+
+}
+
+.crad{
+    background-color: var(--bg-crad);
+    display: flex;
+    box-shadow: 1px 1px 8px rgb(0,0,0,0.2);
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 15px;overflow: hidden;
+    transition: 0.2s;
+}
+.crad img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: 1.8s;
+}
+
+.crad:hover > img{
+    object-position: 0 50%;
+}
+.crad:hover{
+    scale: 1.2;
+    z-index: 999;
+}
+@media only screen and (min-width:300px) {
+    .main-contant{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media only screen and (min-width:500px) {
+    .main-contant{
+        grid-template-columns: repeat(3,1fr);
+    }
+}

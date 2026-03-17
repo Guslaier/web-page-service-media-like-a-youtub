@@ -1,0 +1,62 @@
+.main-contant{
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.thume{
+    display: flex;
+    background-color: var(--bg-crad);
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px rgb(0,0,0,0.3);
+    transition: 0.5s;
+}
+.thume img{
+    width: 100%;
+    object-fit: contain;
+    transition: 0.5s;
+    max-height: 50vh;
+}
+.thume:hover{
+    border-radius: 0px;
+    transition: 0.5s;
+    scale: 1.05;
+}
+.thume:hover > img{
+    transition: 0.5s;
+}
+
+.ch{
+    margin: 22px;
+    display: flex;
+}
+.ch .bg-ch{
+    box-shadow: 1px 1px 10px rgb(0,0,0,0.3);
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    border-radius: 50px;
+    background-color: var(--bg-crad);
+}
+.ch .bg-ch .pf-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-right:10px;
+}
+.ch .bg-ch .pf-icon img{
+    width: 100%;
+    object-position: top
+}
+.ch .bg-ch article{
+    display: flex;
+    height: 100%;
+}
+.ch .bg-ch article p{
+    
+    display: flex;
+    margin: auto;
+
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="sup-pack/sub-icon/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="css/watch.css">
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <script src="script/datascript.js"></script>
+</head>
+
+<body>
+    <nav>
+        <input style="display: none;" type="checkbox" id="ck-menu" name="sub-menu">
+        <a class="nav-icon" href="./index.html">
+            <div style="margin: auto;">
+                <h1>Mus<span>Art</span></h1>
+            </div>
+        </a>
+        <ul class="nav-main">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+        <label class="icon-menu" for="ck-menu">
+            <i class="fi-rr-menu-burger"></i>
+        </label>
+        <ul class="nav-sub">
+            <li><a href="./index.html">
+                    Contant
+                </a></li>
+            <li><a href="./photo.html">
+                    Photo
+                </a></li>
+            <li><a href="./creaiter.html">
+                    Creaiter
+                </a></li>
+        </ul>
+
+    </nav>
+
+    <article class="main-contant">
+        <div class="primary">
+            <div class="con-v">
+                <video id="my-video" class="video-js" controls controlsList="nodownload" preload="auto" autoplay 
+                    oncontextmenu="return false">
+                    <script>
+                        const queryString = window.location.search;
+                        const urlParams = new URLSearchParams(queryString);
+                        const id = urlParams.get('id')
+                        const v = urlParams.get('v')
+                        document.write('<source src="' + dataweb['users'][(id - 1000000)]['VIDEO'][v]['scr'] + '" />')
+                    </script>
+
+                </video>
+            </div>
+            <article class="tt-video">
+                <article style="width: 75%;">
+                    <script>
+                        document.write('<h1>' + dataweb['users'][(id - 1000000)]['VIDEO'][v]['title'] + '</h1>')
+                    </script>
+
+                </article>
+                <article class="view">
+                    <script>
+                        document.write('<p>การดู ' + numberWithCommas(dataweb['users'][(id - 1000000)]['VIDEO'][v]['view']) + ' ครั้ง</p><p>' + dataweb['users'][(id - 1000000)]['VIDEO'][v]['date'] + '</p>')
+                    </script>
+
+                </article>
+            </article>
+            <article class="pf-ch">
+                <div style="flex: 0;">
+                    <div class="pf-icon">
+                        <script>
+                            document.write('<img src="' + dataweb['users'][(id - 1000000)]['PROFILE_IMG'] + '" alt="">')
+                        </script>
+
+                    </div>
+                </div>
+                <article class="ch">
+                    <script>
+                        document.write('<p>' + dataweb['users'][(id - 1000000)]['NAME_CH'] + '</p>')
+                    </script>
+                </article>
+
+            </article>
+        </div>
+        <div class="secondary">
+            <h1 class="title">Onther Video</h1>
+            <div class="all-v">
+                <script>
+                    var nuus = [];
+                    var ck = [], nuu = 0, ids, iv;
+                    for (let p in dataweb['users']) {
+                        for (let i = 0; i < Object.keys(dataweb['users'][p]['VIDEO']).length; i++) {
+                            ck.push([parseInt(p), i])
+                            nuus.push(nuu)
+                            nuu++
+                        }
+                    }
+                    for (let i = 0; i < ck.length; i++) {
+                        if ((ck[i][0]).toString() + '-' + (ck[i][1]).toString() == (id - 1000000).toString() + '-' + (v).toString()) {
+                            ck.splice(i, 1)
+                            break
+                        }
+                    };
+
+                    var nub = ck.length;
+                    if (nub > 15){
+                        nub = 15;
+                    }
+                    for (let i = 1; i <= ck.length; i++) {
+                        cc = Math.floor(Math.random() * (nuus.length - 1))
+                        cs = nuus[cc];
+                        console.log(cs)
+                        ids = ck[cs][0]
+                        iv = ck[cs][1]
+                        nuus.splice(cc, 1)
+                        console.log(nuus)
+
+                        document.open()
+                        document.write('<div class="item-' + i + '">' +
+                            '<a href="./watch.html?id=' + (1000000 + ids) + '&v=' + iv + '" class="crad">' +
+                            '<div class="con-t">' +
+                            '<div class="thum">' +
+                            '   <video id="show' + i + '" src="' + dataweb['users'][ids]['VIDEO'][iv]['scr'] + '"' +
+                            'alt="">' +
+                            '</div></div>' +
+
+                            '<article style="float: left;">' +
+                            '<h1>' + dataweb['users'][ids]['VIDEO'][iv]['title'] + '</h1>' +
+                            '<p>' + dataweb['users'][ids]['NAME_CH'] + '</p>' +
+                            '<span class="view">การดู ' + numberWithCommas(dataweb['users'][ids]['VIDEO'][iv]['view']) + ' ครั้ง</span>' +
+                            '<span> - </span>' +
+                            '<span>' + dataweb['users'][ids]['VIDEO'][iv]['date'] + '</span>' +
+                            '</article></a></div>')
+                        document.getElementById('show' + i).currentTime = 1.5;
+                        document.close()
+                    }
+                </script>
+            </div>
+
+    </article>
+
+</body>
+<script>
+    document.write('<title>' + dataweb['users'][ids]['VIDEO'][iv]['title'] + '</title>')
+</script>
+
+</html>
